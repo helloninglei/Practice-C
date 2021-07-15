@@ -1,6 +1,7 @@
 CFLAGS=-Wall -g
 
 clean:
-	rm -rf *[0-9] # 删除文件名以数字结尾的文件
+	rm -rf *[0-9]
+	rm -rf *.dSYM
 all:
-	ls | grep .c | xargs -i basename {} .c | xargs make
+	ls | grep .c | xargs -I{} basename {} .c | xargs make
